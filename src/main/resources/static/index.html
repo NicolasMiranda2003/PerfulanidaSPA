@@ -206,7 +206,7 @@
       <div class="row g-4" id="featuredProducts">
         <!-- Products will be loaded dynamically -->
       </div>
-        <h4 style="text-align: center;">Hombres</h4>
+        <h4 id="Hombres" style="text-align: center;">Hombres</h4>
       <style>
   .product-list {
     display: flex;
@@ -355,7 +355,7 @@
     </div>
   </section>
   <!-- seccion mujeres -->
-           <h4 style="text-align: center;">Mujeres</h4>
+           <h4 id="Mujeres" style="text-align: center;">Mujeres</h4>
       <style>
   .product-list {
     display: flex;
@@ -503,6 +503,60 @@
     <button class="add-to-cart">Agregar al Carro</button>
   </div>
     </div>
+    <div class="product-list">
+  <div class="product-card">
+    <img src="images/VersaceDiamond.webp" alt="Versace">
+    <div class="brand">VERSACE</div>
+    <div class="title">Perfume Mujer Yellow Diamond Intense EDP 90Ml Versace</div>
+      <span class="price">$69.990</span>
+      <span class="old-price">$110.990</span>
+      <span class="discount">-37%</span>
+    <div class="tag">Disponible</div>
+    <div class="stars">★★★★★</div>
+    <div class="reviews">(33)</div>
+    <button class="add-to-cart">Agregar al Carro</button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/RABANNE.webp" alt="RABANNE">
+    <div class="brand">RABANNE</div>
+    <div class="title">Perfume Mujer Fame Intense 80ML Refillable Rabanne</div>
+    <div class="price">$99.990
+      <span class="old-price">$129.990</span>
+      <span class="discount">-23%</span>
+    </div>
+    <div class="tag">Disponible</div>
+    <div class="stars">★★★★★</div>
+    <div class="reviews">(765)</div>
+    <button class="add-to-cart">Agregar al Carro</button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/CAROLINAHERRRERA.webp" alt="CAROLINA HERRERA">
+    <div class="brand">CAROLINA HERRERA</div>
+    <div class="title">Perfume Mujer Carolina Herrera Edt 50Ml Carolina Herrera</div>
+    <div class="price">$53.990
+      <span class="old-price">$89.990</span>
+      <span class="discount">-40%</span>
+    </div>
+    <div class="tag">Disponible</div>
+    <div class="stars">★★★★★</div>
+    <div class="reviews">(642)</div>
+    <button class="add-to-cart">Agregar al Carro</button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/212.webp" alt="CAROLINA HERRERA">
+    <div class="brand">CAROLINA HERRERA</div>
+    <div class="title">Perfume Mujer 212 Heroes Edp 80Ml Carolina Herrera</div>
+    <div class="price">$119.990
+    </div>
+    <div class="tag">Disponible</div>
+    <div class="stars">★★★★☆</div>
+    <div class="reviews">(283)</div>
+    <button class="add-to-cart">Agregar al Carro</button>
+  </div>
+    </div>
   </section>
 
   <!-- Categories -->
@@ -515,7 +569,7 @@
             <div class="category-image" style="background-image: url('https://liblibai-online.liblib.cloud/img/6fe77fcad9614c799944a901d1cc568a/8f93bb43-e992-4047-adaf-b0f529545c31.png?x-oss-process=image/resize,w_640,m_lfit/format,webp')">
               <div class="category-overlay">
                 <h3>Hombres</h3>
-                <a href="#" class="btn btn-outline-light">Ver colección</a>
+                <a href="#Hombres" class="btn btn-outline-light">Ver colección</a>
               </div>
             </div>
           </div>
@@ -525,7 +579,7 @@
             <div class="category-image" style="background-image: url('https://liblibai-online.liblib.cloud/sd-gen-save-img/299151556-ff000c861d12edf337d54500a680afcb565835b351cba338e2ee91a38e4ae99a.png?x-oss-process=image/resize,w_764,m_lfit/format,webp')">
               <div class="category-overlay">
                 <h3>Mujeres</h3>
-                <a href="#" class="btn btn-outline-light">Ver colección</a>
+                <a href="#Mujeres" class="btn btn-outline-light">Ver colección</a>
               </div>
             </div>
           </div>
@@ -802,7 +856,7 @@
         const cartItemsContainer = document.getElementById('cartItems');
         
         cartCount.textContent = this.count();
-        cartTotal.textContent = $${this.total()};
+        cartTotal.textContent = $$(this.total());
         
         if (cartItemsContainer) {
           cartItemsContainer.innerHTML = '';
@@ -846,7 +900,7 @@
           return;
         }
         
-        alert(Compra realizada por $${this.total()}. ¡Gracias por tu compra!);
+        alert("Compra realizada por ", $$(this.total()), "¡Gracias por tu compra!");
         this.clear();
         window.location.href = 'index.html';
       }
@@ -976,7 +1030,7 @@
       if (product) {
         document.querySelector('.product-name').textContent = product.name;
         document.querySelector('.product-brand').textContent = product.brand;
-        document.querySelector('.product-price').textContent = $${product.price.toLocaleString('es-CL')};
+        document.querySelector('.product-price').textContent = $$(product.price.toLocaleString('es-CL'));
         document.querySelector('.product-image').src = product.image;
         document.querySelector('.size-value').textContent = product.size;
         document.querySelector('.product-description').textContent = product.description;
